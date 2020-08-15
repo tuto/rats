@@ -1,11 +1,11 @@
 const fs = require('fs')
 const mongoose = require('mongoose');
-const mongoURI = "mongodb://ds363058.mlab.com:63058/ants";
+const mongoURI = YOURURI;
 
 mongoose.connect(mongoURI, {
     auth: {
-        user: 'dev',
-        password: "6F-Kw&t?@nB3uyDlCw3w]b'_(>5G$I"
+        user: YOURUSER,
+        password: YOURPASS
     },
     useNewUrlParser: true, 
     useUnifiedTopology: true});
@@ -17,8 +17,8 @@ const getData = async() => {
     });
     const data =  await timers.find()
     fs.writeFileSync('results.csv', "")
-    data.forEach((antResponse) => {
-        fs.appendFileSync('results.csv', `${antResponse.timestamp};${antResponse.serviceTime}\n`);
+    data.forEach((ratResponse) => {
+        fs.appendFileSync('results.csv', `${ratResponse.timestamp};${ratResponse.serviceTime}\n`);
     })
 }
 

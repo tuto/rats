@@ -29,7 +29,7 @@ Los pasos a seguir son:
     MONGO_USER: USERDEBDMLAB
     MONGO_PASS: PASSDEMLAB
     ```
-4. Desplegar la funcion que se encuentra en el archivo index.js un numero de veces que quieras, yo cambiaba el exports.antQueen por exports.antQueen2 y podia
+4. Desplegar la funcion que se encuentra en el archivo index.js un numero de veces que quieras, yo cambiaba el exports.ratQueen por exports.ratQueen2 y podia
 desplegar en todas las regiones de gcp nuevamente todas las ratas de la forma
 (cloud functions deploy ratQueen --runtime nodejs10 --trigger-http --region us-central1 --allow-unauthenticated --memory=1024MB --timeout=120s --env-vars-file=.env.yaml)
 5. Crear un script que te permita llamar a las funciones creadas variando los parámetros de entrada
