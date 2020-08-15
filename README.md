@@ -1,4 +1,4 @@
-# RATS - Herramienta simple y barata para GRANDES pruebas de carga 
+# Herramienta simple y barata para GRANDES pruebas de carga 
 
 ## Motivación
 
@@ -24,9 +24,11 @@ Los pasos a seguir son:
 1. Crear una cuenta gratis en Google Cloud plattform(tienes 300 dolares para "jugar")
 2. Crear una cuenta en mlab.com(tienes 500mb gratis) para almacenar los resultados de las pruebas
 3. Crear un archivo .env.yaml con el siguiente formato
+    ```
     MONGO_URI: URLQUETEDIOMLAB
     MONGO_USER: USERDEBDMLAB
     MONGO_PASS: PASSDEMLAB
+    ```
 4. Desplegar la funcion que se encuentra en el archivo index.js un numero de veces que quieras, yo cambiaba el exports.antQueen por exports.antQueen2 y podia
 desplegar en todas las regiones de gcp nuevamente todas las ratas de la forma
 (cloud functions deploy ratQueen --runtime nodejs10 --trigger-http --region us-central1 --allow-unauthenticated --memory=1024MB --timeout=120s --env-vars-file=.env.yaml)
@@ -36,10 +38,10 @@ desplegar en todas las regiones de gcp nuevamente todas las ratas de la forma
 
 Un ejemplo de llamada sería **https://URLAFUNCTIONS.cloudfunctions.net/ratQueen?ratsNumber=2&loop=2&interval=2000&options=eyJ1cmwiOiJodHRwczovL3d3dy5nb29nbGUuY2wiLCAibWV0aG9kIjoiZ2V0In0=**
 
-- ratsNumber: numero de ratas que va a crear la reina, esto quiere decir el número de hilos con los que esa reina le va a pegar al endpoint que le digas
-- loop: esto quiere decir el numero de veces que la reina lanzara sus ratas sobre el endpoint
-- interval: Cada cuanto tiempo va a lanzar la reina sus ratas sobre el endpoint
-- options: Este es un string en base 64 de las opciones que [axios acepta](https://github.com/axios/axios#request-config) 
+- **ratsNumber**: numero de ratas que va a crear la reina, esto quiere decir el número de hilos con los que esa reina le va a pegar al endpoint que le digas
+- **loop**: esto quiere decir el numero de veces que la reina lanzara sus ratas sobre el endpoint
+- **interval**: Cada cuanto tiempo va a lanzar la reina sus ratas sobre el endpoint
+- **options**: Este es un string en base 64 de las opciones que [axios acepta](https://github.com/axios/axios#request-config) 
 
 ## Obtención de información
 
