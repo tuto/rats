@@ -1,11 +1,11 @@
 const fs = require('fs')
 const mongoose = require('mongoose');
-const mongoURI = YOURMONGOURI;
+const mongoURI = "mongodb://ds363058.mlab.com:63058/ants";
 
 mongoose.connect(mongoURI, {
     auth: {
-        user: YOURMONGOUSER,
-        password: YOURMONGOPASS
+        user: 'dev',
+        password: "6F-Kw&t?@nB3uyDlCw3w]b'_(>5G$I"
     },
     useNewUrlParser: true, 
     useUnifiedTopology: true});
